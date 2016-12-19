@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Range Print</title>
+    <script type="text/javascript">
+      //start at a point, end at another point, skip a certain amount, print all numbers in the range
+      //make it work for negative numbers
+      //if user doesn't pass skip amount, default it to 1
+      //if user doesn't pass end point, make it start at 0 and end at the start point printRange(4); 0,1,2,3
+      function printRange(x,y,z){
+        if(x >= y){
+          console.log("Your start point is larger than your end point, try again.");
+        }
+        //if increment is not defined
+        if (z === undefined){
+          for(var i = x; i<y;i++){
+            console.log(i);
+          }
+        }
+        //if end and increment is not defined
+        if (y === undefined && z === undefined){
+          for (var i = 0; i<x;i++){
+            console.log(i);
+          }
+        }
+        //this is when the user inputs normally
+        else if (x != undefined && y != undefined && z != undefined) {
+          for (var i = x;i<y;i+=z){
+          console.log(i);
+          }
+        }
+      }
+      console.log("start is 2, end is 10, increment by 2");
+      printRange(2,10,2);
+      console.log("start is -20, end is -10, increment by 2");
+      printRange(-20,-10,2);
+      console.log("start is 2, end is 10, increment defaults to 1");
+      printRange(2,10);
+      console.log("start becomes 0 while end becomes 4, increment defaults to 1");
+      printRange(4);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
